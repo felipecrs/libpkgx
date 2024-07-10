@@ -4,6 +4,9 @@ import usePantry from "./usePantry.ts";
 import useConfig from "./useConfig.ts";
 
 export default async function() {
+  // https://github.com/pkgxdev/pkgx/issues/1022
+  return;
+
   if (Deno.build.os == 'windows') return
 
   const path = useConfig().cache.join('pantry.db').rm()  // delete it first so pantry instantiation doesn't use cache
